@@ -7,6 +7,8 @@ class Pasir < Formula
 
   depends_on "rust" => :build
 
+  depends_on "shivammathur/php/php-zts"
+
   # Additional dependency
   # resource "" do
   #   url ""
@@ -14,6 +16,9 @@ class Pasir < Formula
   # end
 
   def install
+    ENV["PHP"] = "#{Formula["shivammathur/php/php-zts"].opt_bin}/php"
+    ENV["PHP_CONFIG"] = "#{Formula["shivammathur/php/php-zts"].opt_bin}/php-config"
+
     system "cargo", "install", *std_cargo_args
   end
 
