@@ -16,13 +16,16 @@ class Pasir < Formula
   # end
 
   def install
+    php_config = "#{Formula["shivammathur/php/php-zts"].opt_bin}/php-config"
+
     ENV["PHP"] = "#{Formula["shivammathur/php/php-zts"].opt_bin}/php"
-    ENV["PHP_CONFIG"] = "#{Formula["shivammathur/php/php-zts"].opt_bin}/php-config"
+    ENV["PHP_CONFIG"] = "#{php_config}"
+    ENV["LIBRARY_PATH"] = `#{php_config} --lib-dir`.strip!
 
     system "cargo", "install", *std_cargo_args
   end
 
   test do
-    system "#{bin}/talenta", "--version"
+    system "#{bin}/pasir", "--version"
   end
 end
