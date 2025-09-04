@@ -1,8 +1,8 @@
 class Pasir < Formula
   desc "PHP Application Server in Rust"
   homepage "https://github.com/el7cosmos/pasir"
-  url "https://github.com/el7cosmos/pasir/archive/refs/tags/0.1.0.tar.gz"
-  sha256 "01e28fde4727d2cd2d9af9be2fea1397fe5e4918a0db20842cfacdf5e2d7ea71"
+  url "https://github.com/el7cosmos/pasir/archive/refs/tags/0.2.0.tar.gz"
+  sha256 "d856e61896fe8e0a0689811dd885f45b38bc605e4c1e35a85949f0a576e73c1d"
   license "GPL-3.0-or-later"
 
   bottle do
