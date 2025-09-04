@@ -15,23 +15,18 @@ class Pasir < Formula
 
   depends_on "shivammathur/php/php-zts"
 
-  # Additional dependency
-  # resource "" do
-  #   url ""
-  #   sha256 ""
-  # end
-
   def install
     php_config = "#{Formula["shivammathur/php/php-zts"].opt_bin}/php-config"
 
     ENV["PHP"] = "#{Formula["shivammathur/php/php-zts"].opt_bin}/php"
     ENV["PHP_CONFIG"] = php_config.to_s
     ENV["LIBRARY_PATH"] = `#{php_config} --lib-dir`.strip!
+    ENV["PASIR_VERSION"] = "0.1.0"
 
     system "cargo", "install", *std_cargo_args
   end
 
   test do
-    system "#{bin}/pasir", "--version"
+    system bin/"pasir", "--version"
   end
 end
