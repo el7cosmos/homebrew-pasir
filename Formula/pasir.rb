@@ -7,8 +7,8 @@ class Pasir < Formula
 
   bottle do
     root_url "https://ghcr.io/v2/el7cosmos/pasir"
-    sha256 cellar: :any, arm64_sequoia: "de75013a85366d205f6b5a3f7850271070011490f0a6f0d26d6b4764e7fe6e57"
-    sha256 cellar: :any, ventura:       "9956da06bb66283c7fb95e75792f26453d9ca4ff1e59ddd4f4d036d04dfecba5"
+    sha256 cellar: :any, arm64_sequoia: "c08cc3381c1fb3ce9c1b759913873cae66588659b6cef9b2bc0d9d558c356d98"
+    sha256 cellar: :any, ventura:       "3e068ad53b4c7cde704ea201fe0b69017a403f7c5ec8748259b159f95129ca5f"
   end
 
   depends_on "rust" => :build
