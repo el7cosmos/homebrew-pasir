@@ -1,8 +1,8 @@
 class Pasir < Formula
   desc "PHP Application Server in Rust"
   homepage "https://github.com/el7cosmos/pasir"
-  url "https://github.com/el7cosmos/pasir/archive/refs/tags/0.3.0.tar.gz"
-  sha256 "682a9372b2740c8d96ec83118842b738579f1ecd06304c569a3168eec96b0479"
+  url "https://github.com/el7cosmos/pasir/archive/refs/tags/0.3.1.tar.gz"
+  sha256 "7f412cd021530b717a8b286111a70177e5176caf7ba3d289cebc69be9f765d51"
   license "GPL-3.0-or-later"
 
   bottle do
@@ -21,7 +21,7 @@ class Pasir < Formula
     ENV["PHP"] = "#{Formula["shivammathur/php/php-zts"].opt_bin}/php"
     ENV["PHP_CONFIG"] = php_config.to_s
     ENV["LIBRARY_PATH"] = `#{php_config} --lib-dir`.strip!
-    ENV["PASIR_VERSION"] = "0.2.0"
+    ENV["PASIR_VERSION"] = "0.3.1"
 
     system "cargo", "install", *std_cargo_args
   end
