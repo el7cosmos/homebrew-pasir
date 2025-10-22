@@ -21,7 +21,6 @@ class Pasir < Formula
     ENV["PHP"] = "#{Formula["shivammathur/php/php-zts"].opt_bin}/php"
     ENV["PHP_CONFIG"] = php_config.to_s
     ENV["LIBRARY_PATH"] = `#{php_config} --lib-dir`.strip!
-    ENV["PASIR_VERSION"] = "0.3.1"
 
     system "cargo", "install", *std_cargo_args
   end
